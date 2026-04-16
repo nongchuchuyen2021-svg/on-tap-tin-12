@@ -1197,42 +1197,42 @@ export default function App() {
                      {" "}
           </div>
         )}
-                {/* Tabs Premium */}
-        <div className="flex bg-gray-200/60 backdrop-blur-md p-2 rounded-2xl mb-8 overflow-x-auto shadow-inner border border-white/50 max-w-3xl mx-auto relative">
+                {/* Tabs Premium (Responsive Mobile/Desktop) */}
+        <div className="flex flex-col md:flex-row gap-2 md:gap-0 bg-gray-200/60 backdrop-blur-md p-2 rounded-2xl mb-8 shadow-inner border border-white/50 max-w-3xl mx-auto relative">
           <button
-            className={`flex-1 flex items-center justify-center gap-2 px-6 py-3 font-bold text-sm rounded-xl whitespace-nowrap transition-all duration-300 ease-out ${
+            className={`flex-1 flex items-center justify-center gap-2 px-6 py-3 font-bold text-sm rounded-xl transition-all duration-300 ease-out w-full ${
               activeTab === "mcq"
-                ? "bg-gradient-to-r from-blue-600 to-indigo-600 text-white shadow-lg shadow-blue-500/40 scale-[1.02] ring-1 ring-white/20 z-10"
-                : "text-gray-500 hover:text-blue-700 hover:bg-white/80 hover:shadow-sm hover:scale-[1.01]"
+                ? "bg-gradient-to-r from-blue-600 to-indigo-600 text-white shadow-lg shadow-blue-500/40 md:scale-[1.02] ring-1 ring-white/20 z-10"
+                : "text-gray-500 hover:text-blue-700 hover:bg-white/80 hover:shadow-sm md:hover:scale-[1.01]"
             }`}
             onClick={() => setActiveTab("mcq")}
           >
-            <ListChecks className="w-5 h-5" />
-            Trắc nghiệm khách quan
+            <ListChecks className="w-5 h-5 flex-shrink-0" />
+            <span>Trắc nghiệm khách quan</span>
           </button>
 
           <button
-            className={`flex-1 flex items-center justify-center gap-2 px-6 py-3 font-bold text-sm rounded-xl whitespace-nowrap transition-all duration-300 ease-out ${
+            className={`flex-1 flex items-center justify-center gap-2 px-6 py-3 font-bold text-sm rounded-xl transition-all duration-300 ease-out w-full ${
               activeTab === "tf"
-                ? "bg-gradient-to-r from-blue-600 to-indigo-600 text-white shadow-lg shadow-blue-500/40 scale-[1.02] ring-1 ring-white/20 z-10"
-                : "text-gray-500 hover:text-blue-700 hover:bg-white/80 hover:shadow-sm hover:scale-[1.01]"
+                ? "bg-gradient-to-r from-blue-600 to-indigo-600 text-white shadow-lg shadow-blue-500/40 md:scale-[1.02] ring-1 ring-white/20 z-10"
+                : "text-gray-500 hover:text-blue-700 hover:bg-white/80 hover:shadow-sm md:hover:scale-[1.01]"
             }`}
             onClick={() => setActiveTab("tf")}
           >
-            <ToggleLeft className="w-5 h-5" />
-            Trắc nghiệm Đúng/Sai
+            <ToggleLeft className="w-5 h-5 flex-shrink-0" />
+            <span>Trắc nghiệm Đúng/Sai</span>
           </button>
 
           <button
-            className={`flex-1 flex items-center justify-center gap-2 px-6 py-3 font-bold text-sm rounded-xl whitespace-nowrap transition-all duration-300 ease-out ${
+            className={`flex-1 flex items-center justify-center gap-2 px-6 py-3 font-bold text-sm rounded-xl transition-all duration-300 ease-out w-full ${
               activeTab === "essay"
-                ? "bg-gradient-to-r from-blue-600 to-indigo-600 text-white shadow-lg shadow-blue-500/40 scale-[1.02] ring-1 ring-white/20 z-10"
-                : "text-gray-500 hover:text-blue-700 hover:bg-white/80 hover:shadow-sm hover:scale-[1.01]"
+                ? "bg-gradient-to-r from-blue-600 to-indigo-600 text-white shadow-lg shadow-blue-500/40 md:scale-[1.02] ring-1 ring-white/20 z-10"
+                : "text-gray-500 hover:text-blue-700 hover:bg-white/80 hover:shadow-sm md:hover:scale-[1.01]"
             }`}
             onClick={() => setActiveTab("essay")}
           >
-            <Edit3 className="w-5 h-5" />
-            Tự luận
+            <Edit3 className="w-5 h-5 flex-shrink-0" />
+            <span>Tự luận</span>
           </button>
         </div>
                 {/* Tab Content: MCQ */}       {" "}
