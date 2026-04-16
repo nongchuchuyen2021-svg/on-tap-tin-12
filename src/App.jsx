@@ -8,6 +8,9 @@ import {
   XCircle,
   AlertTriangle,
   RotateCcw,
+  ListChecks, // Icon cho trắc nghiệm
+  ToggleLeft, // Icon cho đúng/sai
+  Edit3, // Icon cho tự luận
 } from "lucide-react";
 
 // --- HÀM HỖ TRỢ ĐẢO NGẪU NHIÊN ---
@@ -1194,30 +1197,43 @@ export default function App() {
                      {" "}
           </div>
         )}
-                {/* Tabs */}       {" "}
-        <div className="flex border-b border-gray-200 mb-6 overflow-x-auto">
-                   {" "}
+                {/* Tabs */}
+        <div className="flex bg-gray-100 p-1.5 rounded-xl mb-6 overflow-x-auto shadow-inner border border-gray-200">
           <button
-            className={`px-6 py-3 font-medium text-sm whitespace-nowrap transition-colors border-b-2 ${activeTab === "mcq" ? "border-blue-600 text-blue-600 bg-blue-50/50" : "border-transparent text-gray-500 hover:text-gray-700 hover:bg-gray-50"}`}
+            className={`flex-1 flex items-center justify-center gap-2 px-4 py-2.5 font-semibold text-sm rounded-lg whitespace-nowrap transition-all duration-300 ${
+              activeTab === "mcq"
+                ? "bg-white text-blue-700 shadow-sm ring-1 ring-gray-200/50"
+                : "text-gray-500 hover:text-gray-700 hover:bg-gray-200/50"
+            }`}
             onClick={() => setActiveTab("mcq")}
           >
-                        Trắc nghiệm khách quan          {" "}
+            <ListChecks className="w-4 h-4" />
+            Trắc nghiệm khách quan
           </button>
-                   {" "}
+
           <button
-            className={`px-6 py-3 font-medium text-sm whitespace-nowrap transition-colors border-b-2 ${activeTab === "tf" ? "border-blue-600 text-blue-600 bg-blue-50/50" : "border-transparent text-gray-500 hover:text-gray-700 hover:bg-gray-50"}`}
+            className={`flex-1 flex items-center justify-center gap-2 px-4 py-2.5 font-semibold text-sm rounded-lg whitespace-nowrap transition-all duration-300 ${
+              activeTab === "tf"
+                ? "bg-white text-blue-700 shadow-sm ring-1 ring-gray-200/50"
+                : "text-gray-500 hover:text-gray-700 hover:bg-gray-200/50"
+            }`}
             onClick={() => setActiveTab("tf")}
           >
-                        Trắc nghiệm đúng/sai          {" "}
+            <ToggleLeft className="w-4 h-4" />
+            Trắc nghiệm Đúng/Sai
           </button>
-                   {" "}
+
           <button
-            className={`px-6 py-3 font-medium text-sm whitespace-nowrap transition-colors border-b-2 ${activeTab === "essay" ? "border-blue-600 text-blue-600 bg-blue-50/50" : "border-transparent text-gray-500 hover:text-gray-700 hover:bg-gray-50"}`}
+            className={`flex-1 flex items-center justify-center gap-2 px-4 py-2.5 font-semibold text-sm rounded-lg whitespace-nowrap transition-all duration-300 ${
+              activeTab === "essay"
+                ? "bg-white text-blue-700 shadow-sm ring-1 ring-gray-200/50"
+                : "text-gray-500 hover:text-gray-700 hover:bg-gray-200/50"
+            }`}
             onClick={() => setActiveTab("essay")}
           >
-                        Tự luận          {" "}
+            <Edit3 className="w-4 h-4" />
+            Tự luận
           </button>
-                 {" "}
         </div>
                 {/* Tab Content: MCQ */}       {" "}
         {activeTab === "mcq" && (
