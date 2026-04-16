@@ -1197,41 +1197,41 @@ export default function App() {
                      {" "}
           </div>
         )}
-                {/* Tabs */}
-        <div className="flex bg-gray-100 p-1.5 rounded-xl mb-6 overflow-x-auto shadow-inner border border-gray-200">
+                {/* Tabs Premium */}
+        <div className="flex bg-gray-200/60 backdrop-blur-md p-2 rounded-2xl mb-8 overflow-x-auto shadow-inner border border-white/50 max-w-3xl mx-auto relative">
           <button
-            className={`flex-1 flex items-center justify-center gap-2 px-4 py-2.5 font-semibold text-sm rounded-lg whitespace-nowrap transition-all duration-300 ${
+            className={`flex-1 flex items-center justify-center gap-2 px-6 py-3 font-bold text-sm rounded-xl whitespace-nowrap transition-all duration-300 ease-out ${
               activeTab === "mcq"
-                ? "bg-white text-blue-700 shadow-sm ring-1 ring-gray-200/50"
-                : "text-gray-500 hover:text-gray-700 hover:bg-gray-200/50"
+                ? "bg-gradient-to-r from-blue-600 to-indigo-600 text-white shadow-lg shadow-blue-500/40 scale-[1.02] ring-1 ring-white/20 z-10"
+                : "text-gray-500 hover:text-blue-700 hover:bg-white/80 hover:shadow-sm hover:scale-[1.01]"
             }`}
             onClick={() => setActiveTab("mcq")}
           >
-            <ListChecks className="w-4 h-4" />
+            <ListChecks className="w-5 h-5" />
             Trắc nghiệm khách quan
           </button>
 
           <button
-            className={`flex-1 flex items-center justify-center gap-2 px-4 py-2.5 font-semibold text-sm rounded-lg whitespace-nowrap transition-all duration-300 ${
+            className={`flex-1 flex items-center justify-center gap-2 px-6 py-3 font-bold text-sm rounded-xl whitespace-nowrap transition-all duration-300 ease-out ${
               activeTab === "tf"
-                ? "bg-white text-blue-700 shadow-sm ring-1 ring-gray-200/50"
-                : "text-gray-500 hover:text-gray-700 hover:bg-gray-200/50"
+                ? "bg-gradient-to-r from-blue-600 to-indigo-600 text-white shadow-lg shadow-blue-500/40 scale-[1.02] ring-1 ring-white/20 z-10"
+                : "text-gray-500 hover:text-blue-700 hover:bg-white/80 hover:shadow-sm hover:scale-[1.01]"
             }`}
             onClick={() => setActiveTab("tf")}
           >
-            <ToggleLeft className="w-4 h-4" />
+            <ToggleLeft className="w-5 h-5" />
             Trắc nghiệm Đúng/Sai
           </button>
 
           <button
-            className={`flex-1 flex items-center justify-center gap-2 px-4 py-2.5 font-semibold text-sm rounded-lg whitespace-nowrap transition-all duration-300 ${
+            className={`flex-1 flex items-center justify-center gap-2 px-6 py-3 font-bold text-sm rounded-xl whitespace-nowrap transition-all duration-300 ease-out ${
               activeTab === "essay"
-                ? "bg-white text-blue-700 shadow-sm ring-1 ring-gray-200/50"
-                : "text-gray-500 hover:text-gray-700 hover:bg-gray-200/50"
+                ? "bg-gradient-to-r from-blue-600 to-indigo-600 text-white shadow-lg shadow-blue-500/40 scale-[1.02] ring-1 ring-white/20 z-10"
+                : "text-gray-500 hover:text-blue-700 hover:bg-white/80 hover:shadow-sm hover:scale-[1.01]"
             }`}
             onClick={() => setActiveTab("essay")}
           >
-            <Edit3 className="w-4 h-4" />
+            <Edit3 className="w-5 h-5" />
             Tự luận
           </button>
         </div>
