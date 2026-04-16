@@ -1235,13 +1235,14 @@ export default function App() {
                 key={q.id}
                 className="bg-white p-6 rounded-xl shadow-sm border border-gray-100"
               >
-                               {" "}
-                <h3 className="font-semibold text-lg mb-4 flex gap-2">
-                                   {" "}
+                                {/* Thay thế thẻ h3 cũ bằng đoạn này */}
+                <h3 className="font-semibold text-base md:text-lg mb-4 flex flex-col md:flex-row gap-1 md:gap-2">
                   <span className="text-blue-600 whitespace-nowrap">
-                                        Câu {index + 1}:                  {" "}
+                    Câu {index + 1}:
                   </span>
-                                    <span>{q.text}</span>               {" "}
+                  <span className="text-gray-800 leading-relaxed">
+                    {q.text}
+                  </span>
                 </h3>
                                {" "}
                 <div className="space-y-3 pl-4">
