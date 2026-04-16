@@ -1333,14 +1333,11 @@ export default function App() {
                                    {" "}
                   <div className="flex justify-between items-start mb-4 gap-4">
                                        {" "}
-                    <h3 className="font-semibold text-lg flex gap-2">
-                                           {" "}
+                    <h3 className="font-semibold text-base md:text-lg flex flex-col md:flex-row gap-1 md:gap-2 w-full">
                       <span className="text-blue-600 whitespace-nowrap">
-                                                Câu {index + 1}:                
-                             {" "}
+                        Câu {index + 1}:
                       </span>
-                                            <span>{q.text}</span>               
-                         {" "}
+                      <span className="text-gray-800 flex-1">{q.text}</span>
                     </h3>
                                        {" "}
                     {isSubmitted && (
@@ -1455,12 +1452,11 @@ export default function App() {
                 className="bg-white p-6 rounded-xl shadow-sm border border-gray-100"
               >
                                {" "}
-                <h3 className="font-semibold text-lg mb-4 flex gap-2">
-                                   {" "}
+                <h3 className="font-semibold text-base md:text-lg mb-4 flex flex-col md:flex-row gap-1 md:gap-2 w-full">
                   <span className="text-blue-600 whitespace-nowrap">
-                                        Câu {index + 1}:                  {" "}
+                    Câu {index + 1}:
                   </span>
-                                    <span>{q.text}</span>               {" "}
+                  <span className="text-gray-800 flex-1">{q.text}</span>
                 </h3>
                                {" "}
                 <textarea
