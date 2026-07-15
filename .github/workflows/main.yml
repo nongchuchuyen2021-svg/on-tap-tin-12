@@ -1,0 +1,51 @@
+name: Deploy Vite SPA to GitHub Pages
+
+on:
+  push:
+    branches:
+      - main # Chạy tự động mỗi khi có code mới đẩy lên nhánh main
+
+# Cấp quyền cho GitHub Actions để deploy trang web
+permissions:
+  contents: read
+  pages: write
+  id-token: write
+
+# Tránh việc chạy nhiều lệnh deploy cùng lúc gây xung đột
+concurrency:
+  group: "pages"
+  cancel-in-progress: true
+
+jobs:
+  deploy:
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v4
+
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: 20
+          cache: 'npm'
+
+      - name: Cài đặt thư viện
+        run: npm install
+
+      - name: Build dự án
+        run: npm run build
+
+      - name: Thiết lập GitHub Pages
+        uses: actions/configure-pages@v4
+
+      - name: Tải lên thư mục dist
+        uses: actions/upload-pages-artifact@v3
+        with:
+          path: './dist' # Vị trí thư mục Vite build ra
+
+      - name: Triển khai lên GitHub Pages
+        id: deployment
+        uses: actions/deploy-pages@v4
